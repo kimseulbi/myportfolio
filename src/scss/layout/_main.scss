@@ -1,0 +1,311 @@
+.main {
+  .comp {
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 150;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    pointer-events: none;
+    .comp__area {
+      margin-right: 4rem;
+      justify-self: end;
+      align-self: center;
+      position: absolute;
+      grid-area: 1 / 1 / 2 / 2;
+      pointer-events: initial;
+      .comp__list {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+        &__item {
+          padding: 10px 0;
+          a {
+            padding: 10px;
+            i {
+              font-size: 2rem;
+            }
+            &:hover,
+            &:focus {
+              color: $brand-point;
+            }
+          }
+        }
+      }
+    }
+  }
+  .protfo {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding: 8rem 0;
+    max-width: 1170px;
+    margin: 0 auto;
+    .protfo__img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      display: block;
+      border-radius: 1rem;
+      border: 1px solid darken($brand-bg, 10%);
+      -webkit-filter: grayscale(100%);
+      filter: gray;
+      overflow: hidden;
+      &:hover {
+        cursor: pointer;
+        transition: 0.5s;
+        -webkit-filter: grayscale(0%);
+        filter: none;
+        box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.08);
+      }
+      img{
+        width: 100%;
+        &:hover{
+          transform: scale(1.05);
+          transition-duration: .3s;
+        }
+      }
+    }
+  }
+  .about__bg {
+    padding: 8rem 3.5rem;
+    margin-top: 35px;
+    background: $brand-bg;
+    .about {
+      position: relative;
+      &__heading {
+        .name {
+          font-size: 2.6rem;
+          position: relative;
+          padding-top: 1.8rem;
+          &::after {
+            background: $brand-point;
+            border-radius: 0.5rem;
+            display: block;
+            width: 5rem;
+            height: 3px;
+            position: absolute;
+            top: 0;
+            content: "";
+          }
+        }
+        p {
+          color: lighten(#000, 60%);
+        }
+      }
+      .profile__img {
+        width: 80%;
+        border-radius: 50%;
+        padding: 15%;
+        background: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .skillset {
+        display: flex;
+        align-items: center;
+        .skill__list {
+          .skill__item {
+            margin-bottom: 2.5rem;
+            h6 {
+              color: $brand-point;
+              font-size: 1.8rem;
+              font-weight: 600;
+            }
+            p {
+              margin-top: 0.5rem;
+              word-break: keep-all;
+            }
+          }
+        }
+      }
+      .award {
+        display: flex;
+        align-items: center;
+        &__item {
+          .bage {
+            color: white;
+            border-radius: 5px;
+            background-color: $brand-point;
+            min-width: 100px;
+            text-align: center;
+            font-size: 1.6rem;
+            font-family: $num-font-family;
+            font-weight: 600;
+            padding: 2px;
+            top: 3px;
+            left: 0;
+            text-align: center;
+          }
+          span {
+            font-size: 1.6rem;
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+  }
+  .toolbox {
+    display: grid;
+    .toolbox__item {
+      background: rgba($color: $brand-point, $alpha: 0.4);
+    }
+  }
+}
+
+@include respond-to("medium") {
+  .main {
+    .protfo {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      margin: 0 35px;
+      figure {
+        grid-column: span 6;
+      }
+    }
+    .about__bg {
+      .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+        .profile__img {
+          display: none;
+        }
+      }
+      .award__item {
+        margin-bottom: 2rem;
+        padding-left: 0;
+        .bage {
+          display: block;
+          position: relative;
+        }
+        p {
+          margin-top: 1rem;
+        }
+      }
+    }
+    .toolbox {
+      grid-template-columns: 1fr;
+      padding: 0 3.5rem;
+      .toolbox__heading {
+        font-size: 2.6rem;
+        margin-bottom: 3rem;
+      }
+      .toolbox__item {
+        height: 30rem;
+        &:nth-child(n-1) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 960px) {
+  .main {
+    .protfo {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      margin: 0 35px;
+      figure {
+        grid-column: span 3;
+      }
+    }
+    .about__bg {
+      .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 35px;
+        .profile__img {
+          display: none;
+        }
+      }
+      .award__item {
+        position: relative;
+        padding-left: 120px;
+        margin-bottom: 1rem;
+        .bage {
+          display: inline-block;
+          position: absolute;
+        }
+      }
+    }
+    .toolbox {
+      grid-template-columns: 1fr;
+      padding: 0 3.5rem;
+      .toolbox__heading {
+        font-size: 2.6rem;
+        margin-bottom: 3rem;
+      }
+      .toolbox__item {
+        height: 30rem;
+        &:nth-child(n-1) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to("huge") {
+  .main {
+    .protfo {
+      grid-template-columns: repeat(12, 1fr);
+      padding: 12rem 3.5rem;
+      figure {
+        grid-column: span 6;
+      }
+    }
+    .about__bg {
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        .about__heading {
+          grid-column: 1 / span 12;
+          grid-row: 1/2;
+        }
+        .profile__img {
+          grid-column: 1 / span 4;
+          grid-row: 2/3;
+        }
+        .skillset {
+          margin-bottom: 30px;
+          grid-column: 5 / span 4;
+          grid-row: 2/3;
+        }
+        .award {
+          grid-column: 9 / span 4;
+          grid-row: 2/3;
+          .award__item {
+            position: relative;
+            padding-left: 120px;
+            margin-bottom: 1rem;
+            .bage {
+              display: inline-block;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+    .toolbox {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      padding: 0 3.5rem;
+      .toolbox__heading {
+        font-size: 2.6rem;
+        margin-bottom: 3rem;
+      }
+      .toolbox__item {
+        height: 30rem;
+        &:nth-child(n-1) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}
