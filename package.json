@@ -21,6 +21,8 @@
     "picturefill": "^3.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2"
+    "@babel/core": "^7.1.2",
+    "postcss": "^8.2.6",
+    "postcss-modules": "^4.0.0"
   }
 }
