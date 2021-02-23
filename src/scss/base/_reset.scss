@@ -106,16 +106,19 @@ main {
 ul {
   list-style-type: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 /* 하이퍼링크 스타일 */
 a {
   color: inherit;
   text-decoration: none;
   /* cursor: crosshair; */
 }
+
 *,
 *::before,
 *::after {
@@ -131,6 +134,7 @@ a {
   display: block;
   clear: both;
 }
+
 /* 숨김 콘텐츠 */
 .readable-hidden,
 .skip-nav,
@@ -143,6 +147,7 @@ legend {
   /* 사각형 단위로 짤라내기 */
   clip: rect(0, 0, 0, 0);
 }
+
 /* 동적으로 보이도록 처리 */
 .skip-nav:focus {
   width: 100%;
@@ -155,6 +160,7 @@ legend {
   clip: rect(auto, auto, auto, auto);
   z-index: 100;
 }
+
 input {
   &:focus {
     outline: none;
@@ -165,6 +171,7 @@ html {
   font-size: 10px;
   scroll-behavior: smooth;
 }
+
 body {
   background: $body-bg;
   font-family: $font-family;
@@ -172,15 +179,19 @@ body {
   height: 100vh;
   color: $font-base;
 }
+
 ::selection {
   background: rgba($color: $brand-point, $alpha: 0.2);
 }
+
 ::-moz-selection {
   background: rgba($color: $brand-point, $alpha: 0.2);
 }
+
 p {
   font-size: 1.6rem;
 }
+
 .footer__area,
 .visual,
 .about,
@@ -189,6 +200,11 @@ p {
   max-width: 1170px;
   margin: 0 auto;
 }
-.highlight{
+
+.highlight {
   background: rgba($color: $brand-point, $alpha: 0.2);
+}
+
+template {
+  display: none !important;
 }
