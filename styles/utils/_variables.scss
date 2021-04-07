@@ -1,6 +1,8 @@
 // font
-$num-font-family: "Montserrat", sans-serif;
-$font-family: "Noto Sans KR", sans-serif;
+$num-font-family: "Montserrat",
+sans-serif;
+$font-family: "Noto Sans KR",
+sans-serif;
 
 //== Colors
 //
@@ -14,17 +16,11 @@ $brand-bg: #f4f7f6;
 $body-bg: #fff;
 
 // breakpoints
-$breakpoints: (
-  "medium": (
-    max-width: 600px
-  ),
+$breakpoints: ("medium": (max-width: 600px),
   // "large": (
   //   min-width:  
   // ),
-  "huge": (
-    min-width: 961px
-  )
-);
+  "huge": (min-width: 961px));
 
 // images URL
-$brand-logo: url(images/logo.svg);
+$brand-logo: url("/images/logo.svg");

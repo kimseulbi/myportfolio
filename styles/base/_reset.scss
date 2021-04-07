@@ -208,3 +208,9 @@ p {
 template {
   display: none !important;
 }
+
+.logo,
+button {
+  cursor: pointer;
+  outline: none;
+}
